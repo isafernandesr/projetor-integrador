@@ -1,6 +1,73 @@
 body {
             font-family: Arial, sans-serif;
-            background-color: #ca8484;
+            background-color: #efd2d2;
             text-align: center;
             padding: 20px;
-        } 
+            
+            background-image: url('../imagens/hemacias.png');
+            background-size: cover;    
+            background-repeat: no-repeat; 
+            background-position: center;  
+
+            margin: 0;
+            font-family: Arial, sans-serif;
+
+            .navbar {
+                position: fixed;
+                top: 0;
+                width: 90%;
+                background-color: transparent;
+                color: rgb(97, 17, 17);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                transition: background-color 0.3s, padding 0.3s;
+            }
+
+            .nav-links {
+                list-style: none;
+                display: flex;
+                gap: 30px;
+            }
+
+            .nav-links a {
+                text-decoration: none;
+                color: rgb(71, 4, 4);
+                font-weight: bold;
+            }
+
+.navbar.scrolled {
+  background-color: #de5e5e;
+  padding: 10px 40px;
+}
+
+}
+
+
+p {
+  text-align: left;
+  margin-left: 20px;
+}
+
+@media (max-width: 768px) {
+  p {
+    text-align: center;
+    margin-left: 0;
+  }
+}
+
+h1 {
+  text-align: left;
+  margin-left: 20px;
+  margin-top: 60px; 
+}
+
+@media (max-width: 768px) {
+  h1 {
+    text-align: center;
+    margin-left: 0;
+    margin-top: 60px; 
+  }
+}
+
+
