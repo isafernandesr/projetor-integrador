@@ -12,108 +12,6 @@ body {
             margin: 0;
             font-family: Arial, sans-serif; }
 
-.navbar {
-            position: fixed;
-            top: 0;
-            width: 90%;
-            background-color: transparent;
-            color: rgb(97, 17, 17);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background-color 0.3s, padding 0.3s;
-            }
-
-.nav-links {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-            }
-
-.nav-links a {
-            text-decoration: none;
-            color: rgb(71, 4, 4);
-            font-weight: bold;
-            }
-
-.navbar.scrolled {
-            background-color: #de5e5e;
-            padding: 10px 40px;
-}
-.logo {
-  font-size: 22px;
-  font-weight: bold;
-  color: rgb(97, 17, 17);
-  margin-left: 20px;
-}
-
-.menu-toggle {
-  display: none;
-  font-size: 26px;
-  cursor: pointer;
-  margin-right: 20px;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-}
-
-
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block; 
-  }
-
-  .nav-links {
-    display: none; 
-    flex-direction: column;
-    align-items: center;
-    background-color: #de5e5e;
-    width: 100%;
-    padding: 10px 0;
-    position: absolute;
-    top: 60px; 
-    left: 0;
-  }
-
-  .nav-links.active {
-    display: flex;
-  
-
-  .nav-links a {
-    color: white;
-    font-weight: bold;
-    padding: 10px 0;
-    text-decoration: none;
-    width: 100%;
-    text-align: center;
-  }
-
-  .nav-links a:hover {
-    background-color: rgb(150, 20, 20);
-  }
-}
-
-
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column; 
-    align-items: center;
-    width: 100%; 
-  }
-
-  .nav-links {
-    flex-direction: column; 
-    gap: 10px; 
-    padding: 10px 0;
-  }
-
-  .nav-links a {
-    font-size: 16px; 
-  }
-}
 
 
 p {
@@ -212,8 +110,123 @@ section {
   scroll-margin-top: 90px; 
 }
 
+
+.prof {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.prof img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%; 
+  object-fit: cover; 
+}
+
+.prof p {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .container-imagens-3 {
+    flex-direction: column; 
+    align-items: center;
+  }
+
+  .prof {
+    margin-bottom: 20px;
+  }
+}
+section {
+  scroll-margin-top: 90px; 
+}
+
+
 @media (max-width: 768px) {
   .content-body {
-    margin-top: 250px;
+    margin-top: 50px;
   }
+}
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #d74141;
+  padding: 15px 40px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+.tab-button {
+  background: white;
+  border: none;
+  color: #8b0000;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.tab-button:hover {
+  background-color: #ffbcbc;
+}
+
+.tab-button.active {
+  background-color: #8b0000;
+  color: white;
+}
+/* ========================================================= */
+/* 🎯 ESTILOS ESPECÍFICOS PARA TELAS PEQUENAS (CELULARES) */
+/* ========================================================= */
+
+@media (max-width: 768px) {
+    
+    /* 1. MUDAR O LAYOUT PRINCIPAL DO HEADER */
+    .menu {
+        flex-direction: column; /* Coloca os itens (logo e nav) um abaixo do outro */
+        padding: 15px 10px;    /* Reduz o padding lateral para ganhar espaço */
+        position: relative;    /* Para facilitar a rolagem (se necessário) */
+        height: auto;          /* Deixa a altura se ajustar */
+    }
+
+    .logo {
+        margin-bottom: 10px; /* Adiciona um pequeno espaço entre o logo e o menu */
+    }
+
+    /* 2. FORÇAR A BARRA DE NAVEGAÇÃO A USAR 100% DA LARGURA */
+    nav {
+        flex-wrap: wrap;       /* Permite que os botões quebrem a linha */
+        justify-content: center; /* Centraliza os botões */
+        width: 100%;           /* Garante que o container nav use a largura total */
+        gap: 8px;              /* Reduz o espaço entre os botões */
+    }
+
+    /* 3. AJUSTAR OS BOTÕES DO MENU */
+    .tab-button {
+        /*
+         * Usar uma largura relativa (ex: porcentagem) ou max-width é crucial
+         * para que eles se ajustem e não forcem a barra horizontal.
+         */
+        padding: 8px 15px;      
+        font-size: 14px;
+        flex-grow: 1;           /* Faz os botões tentarem crescer para preencher */
+        min-width: 100px;       /* Um tamanho mínimo para não ficarem muito pequenos */
+    }
 }
